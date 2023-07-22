@@ -1,4 +1,7 @@
-package Poo;
+package VIEW;
+
+import CONTROLER.ConexionDB_Est;
+import MODEL.Estudiante;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

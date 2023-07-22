@@ -1,4 +1,7 @@
-package Poo;
+package VIEW;
+
+import CONTROLER.ConexionDB_Est;
+import MODEL.Estudiante;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +18,7 @@ public class Agregar {
     private JFrame form2;
 
     public void iniciar() {
-        form2 = new JFrame("FACTURA SIN IVA");
+        form2 = new JFrame("Agregar");
         form2.setContentPane(panelAgregar);
         form2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         form2.pack();

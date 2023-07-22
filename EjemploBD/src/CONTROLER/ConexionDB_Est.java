@@ -1,4 +1,6 @@
-package Poo;
+package CONTROLER;
+
+import MODEL.Estudiante;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class ConexionDB_Est {
     public ArrayList<Estudiante> getListaEstudiantes() {
         try{
             listaEstudiantes=new ArrayList<Estudiante>();
-            setConcDB("jdbc:sqlite:src/DB_EstPOO.db");
+            setConcDB("jdbc:sqlite:EjemploBD/bd/DB_EstPOO.db");
             Statement statement= concDB.createStatement();
             ResultSet resultSet= statement.executeQuery("select * from EstudianteProyectoPOO");
             while(resultSet.next()){
@@ -38,7 +40,7 @@ public class ConexionDB_Est {
     public String insertarEstudiante(Estudiante est){
         try{
             est.establecerEstado();
-            setConcDB("jdbc:sqlite:src/DB_EstPOO.db");
+            setConcDB("jdbc:sqlite:EjemploBD/bd/DB_EstPOO.db");
             Statement statement= concDB.createStatement();
             String strInsertEst=String.format("insert into EstudianteProyectoPOO(nombre, cedula, correo, notaFinal, estado) values('%s', '%s', '%s', %d, '%s')", est.nombre,est.cedula,est.correo,est.notaFinal,est.estado);
             statement.executeUpdate(strInsertEst);
@@ -50,7 +52,7 @@ public class ConexionDB_Est {
     }
     public void eliminarEstudiante(String cedula) {
         try {
-            setConcDB("jdbc:sqlite:src/DB_EstPOO.db");
+            setConcDB("jdbc:sqlite:EjemploBD/bd/DB_EstPOO.db");
             Statement statement=concDB.createStatement();
             String strDeleteEst="DELETE FROM EstudianteProyectoPOO WHERE cedula='"+cedula + "'";
             statement.executeUpdate(strDeleteEst);

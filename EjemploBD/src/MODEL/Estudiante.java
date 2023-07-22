@@ -1,11 +1,11 @@
-package Poo;
+package MODEL;
 
 public class Estudiante {
     public String nombre;
-    String cedula;
-    String correo;
-    int notaFinal;
-    String estado;
+    public String cedula;
+    public String correo;
+    public int notaFinal;
+    public String estado;
 
     public Estudiante(String nombre, String cedula, String correo, int notaFinal) {
         this.nombre = nombre;
